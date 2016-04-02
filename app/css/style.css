@@ -1,0 +1,12 @@
+body {
+  height: 100%;
+}
+
+.task {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.delete:hover {
+  text-decoration: underline;
+}

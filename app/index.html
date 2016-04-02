@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="manageMe">
 <head>
   <meta charset="utf-8">
   <title>Manage Me</title>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/controllers/taskController.js"></script>
+  <script src="js/services/taskStorage.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
-<body>
-  Hello, world!
+<body ng-controller="taskController as taskCtrl">
+
+  <h1>Manage Me!</h1>
+  <h4>A simple task manager - written in AngularJS by Rufus Raghunath</h4>
+
+  <section id="add-task">
+    <form>
+      <input type="text" ng-model="description" placeholder="Description">
+      <input type="text" ng-model="date" placeholder="Date">
+      <input type="submit" id="add-task" value="Add task" ng-click="taskCtrl.taskStorage.addTask(
+        {description: description,
+        date: date});
+        description = '';
+        date = ''">
+    </form>
+  </section>
+
+  <section id="task-list">
+    <ul class="task" ng-repeat="task in taskCtrl.tasks | orderBy: 'date'">
+      <li><b>{{task.description}}</b></li>
+      <li><em>Due {{task.humanizedDate}}</em></li>
+      <li><a class="delete" ng-click="taskCtrl.taskStorage.deleteTask(task);">Remove task</a></li>
+    </ul>
+  </section>
+
 </body>
 </html>
