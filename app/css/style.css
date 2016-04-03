@@ -10,3 +10,12 @@ body {
 .delete:hover {
   text-decoration: underline;
 }
+
+.task {
+  padding-top: 20px;
+}
+
+.help-block {
+  color: red;
+  font-weight: bold;
+}
