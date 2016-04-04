@@ -1,4 +1,6 @@
-
-<b>{{task.description}}</b><br />
-<em>Due {{task.humanizedDate}}</em><br />
-<a class="delete" ng-click="taskCtrl.deleteTask(task);">Remove task</a>
+<section class="task-item">
+  <hr />
+  <b>{{task.description}}</b><br />
+  <em>Due {{task.humanizedDate}}</em><br />
+  <a href="" class="delete" ng-click="taskCtrl.deleteTask(task);"><img class="trash" src="images/delete.svg"></a>
+</section>

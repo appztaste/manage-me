@@ -1,7 +1,5 @@
 manageMe.controller('taskController', ['taskFetcher', '$scope', function(taskFetcher, $scope) {
 
-  // Validation should be used to ensure the task has a description and is not in the past.
-// The application should be styled in a nice format, of course feel free to use any css frameworks you feel are appropriate.
 // A grunt task should be used to build the applications source code and concatenate and minify them into the following files: application.min.js and application.min.css.
 // The application should either be packaged as a git repository or in a zip file with a description on how to build the application to run, and emailed to g reg@appointedd.com
 
